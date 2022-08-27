@@ -5,10 +5,10 @@
 import random
 from words import words
 
-play = input("Do you want to play or quit? ").lower()
+play = input("Do you want to play or quit (y or q)? ").lower()
 if play == "y":
     pass
-elif play == "quit":
+elif play == "q":
     quit()
 
 computer_word = random.choice(words)
@@ -41,11 +41,6 @@ while guess != computer_word:
             break
         elif answer != computer_word:
             print("No, the answer is not right.")
-            play_again = input("Do you want to play again (y or n)?").lower()
-            if play_again == "y":
-                start()
-            elif play_again == "n":
-                quit()
     elif guess_the_word == "no":
         pass
 
@@ -77,8 +72,4 @@ while guess != computer_word:
 # 15 tries, game over
     if tries == 15:
         print(f"You could not get the word correct. The word was {computer_word}")
-        play_again = input("Do you want to play again (y or n)?").lower()
-            if play_again == "y":
-                start()
-            elif play_again == "n":
-                quit()
+        quit()
